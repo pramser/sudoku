@@ -1,0 +1,9 @@
+.Game {
+  background-color: #fff;
+  text-align: center;
+}
+
+button.checkGame {
+  font-size: 1.3em;
+  margin-top: 20px;
+}
