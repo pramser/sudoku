@@ -1,9 +1,27 @@
 .Game {
-  background-color: #fff;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.infoWindow {
+  font-size: 1.3em;
   text-align: center;
+  background-color: #fff;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 20px;
+  padding: 20px;
 }
 
 button.checkGame {
+  color: #fff;
+  background-color: #363330;
   font-size: 1.3em;
+  border-radius: 10px;
   margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
 }
