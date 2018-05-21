@@ -1,6 +1,7 @@
 .board {
   background-color: #ccc;
   border: 1px solid black;
+  border-radius: 10px;
 
   height: 400px;
   width: 400px;
@@ -17,7 +18,7 @@
 
 div.board div.cell:hover {
   color: #fff;
-  background-color: #77c;
+  background-color: #03bbf0;
 }
 
 .row {

@@ -1,10 +1,12 @@
 .cell {
-  font-size: 3em;
+  font-size: 4em;
+  color: #dea460;
   text-align: center;
 
-  padding-top: 20px;
+  padding-top: 10px;
 
   border: 2px solid #ccc;
+  border-radius: 10px;
 
   flex: 1;
   display: flex;
@@ -21,15 +23,16 @@
 }
 
 .locked-cell {
-  color: #fff;
-  background-color: #999;
+  color: #a1a1b9;
+  background-color: #b2c0db;
 
-  font-size: 3em;
+  font-size: 4em;
   text-align: center;
 
-  padding-top: 20px;
+  padding-top: 10px;
 
   border: 2px solid #ccc;
+  border-radius: 10px;
 
   flex: 1;
   display: flex;
