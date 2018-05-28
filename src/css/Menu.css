@@ -7,16 +7,14 @@
   justify-content: center;
 }
 
-.header {
-  color: #000;
-  font-size: 1em;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #ccc;
+.menuItem {
+  font-size: 2em;
+  background-color: #fff;
   border: 1px solid black;
   border-radius: 10px;
 
-  height: 400px;
   width: 400px;
+  height: 50px;
   min-width: 400px;
 
   text-align: center;
