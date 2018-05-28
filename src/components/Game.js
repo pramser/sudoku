@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // CSS
-import './Game.css';
+import '../css/Game.css';
 
 // Components
 import Board from './components/Board';

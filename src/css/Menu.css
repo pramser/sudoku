@@ -1,0 +1,44 @@
+.Menu {
+  background-color: #eee;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  color: #000;
+  font-size: 1em;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #ccc;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  height: 400px;
+  width: 400px;
+  min-width: 400px;
+
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+button.newGame {
+  font-size: 1.3em;
+  color: #fff;
+  background-color: #363330;
+  border-radius: 10px;
+
+  width: 400px;
+
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+}

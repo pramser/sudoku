@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import Game from './Game';
+import Menu from './components/Menu';
 
-ReactDOM.render(<Game />, document.getElementById('root'));
+ReactDOM.render(<Menu />, document.getElementById('root'));
