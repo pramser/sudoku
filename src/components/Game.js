@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import '../css/Game.css';
 
 // Components
-import Board from './components/Board';
+import Board from './Board';
 
 var puz = [[0, -3, 0, -1], [-4, 0, 0, 0], [0, 0, 0, -2], [-3, 0, -1, 0]];
 var sol = [[2, 3, 4, 1], [4, 1, 2, 3], [1, 4, 3, 2], [3, 2, 1, 4]];
