@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 // Components
 import Cell from './Cell';
@@ -6,7 +6,7 @@ import Cell from './Cell';
 // CSS
 import '../css/Board.css';
 
-export default class Board extends Component {
+export default class Board extends PureComponent {
   /* PROPS:
         data - board array passed in
         size - size of board in dimension
@@ -15,28 +15,26 @@ export default class Board extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      data: props.data
-    };
-
     this.onClickCell = this.onClickCell.bind(this);
   }
 
-  onClickCell(r, c) {
-    const _data = this.state.data;
-    var val = _data[r][c];
-    _data[r][c] = val === this.props.size ? 0 : val + 1;
+  componentDidMount() {
+    // Add in board loader.
+  }
 
-    this.setState({
-      data: _data
-    });
+  onClickCell(r, c) {
+    const board = this.props.data.slice();
+    var val = board[r][c];
+    board[r][c] = val === this.props.size ? 0 : val + 1;
+
+    // Callback to props.
+    this.props.onBoardUpdate(board);
   }
 
   render() {
     return (
       <div className="board">
-        {this.state.data.map((row, r) => (
+        {this.props.data.map((row, r) => (
           <div className="row" key={r}>
             {row.map((col, c) => (
               <Cell

@@ -6,19 +6,28 @@ import '../css/Game.css';
 
 // Components
 import Board from './Board';
-
-var puz = [[0, -3, 0, -1], [-4, 0, 0, 0], [0, 0, 0, -2], [-3, 0, -1, 0]];
-var sol = [[2, 3, 4, 1], [4, 1, 2, 3], [1, 4, 3, 2], [3, 2, 1, 4]];
+import { getPuzzle } from '../data/PuzzleLoader';
 
 class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      solutionInfo: 'Unchecked'
+      solutionInfo: 'Unchecked',
+      puz: [],
+      sol: []
     };
   }
 
+  componentDidMount() {
+    // Mount my puzzle.
+    getPuzzle('med', 2, (puz, sol) => {
+      this.setState({ puz, sol });
+    });
+  }
+
   checkGame() {
+    var puz = this.state.puz;
+    var sol = this.state.sol;
     var zero_count = 0;
 
     for (var r = 0; r < puz.length; r++) {
@@ -30,9 +39,6 @@ class Game extends Component {
         // col
         var puz_col = puz_row[c];
         var sol_col = sol_row[c];
-        console.log(
-          'Puzzle column: ' + puz_col + ' - Solution col: ' + sol_col
-        );
 
         if (puz_col === 0) {
           zero_count++;
@@ -54,10 +60,18 @@ class Game extends Component {
     }
   }
 
+  handleBoardUpdate = puz => {
+    this.setState({ puz });
+  };
+
   render() {
     return (
       <div className="Game">
-        <Board data={puz} size={4} type={'square'} />
+        <Board
+          data={this.state.puz}
+          size={4}
+          onBoardUpdate={this.handleBoardUpdate}
+        />
         <div className="infoWindow">{this.state.solutionInfo}</div>
         <button className="checkGame" onClick={() => this.checkGame()}>
           Check Game
