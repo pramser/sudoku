@@ -10,8 +10,10 @@ export default class GameRouter extends Component {
     return (
       <Router>
         <div>
-          <div style={{ textAlign: 'center', marginTop: 20, fontSize: 50 }}>
-            <Link to="/">Super Sudoku DX</Link>
+          <div className="titleContainer">
+            <Link className="title" to="/">
+              Super Sudoku DX
+            </Link>
           </div>
           <div>
             <Route exact path="/" component={Menu} />

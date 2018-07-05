@@ -27,10 +27,11 @@
   justify-content: center;
 }
 
-button.newGame {
+.menuLink {
   font-size: 1.3em;
-  color: #fff;
-  background-color: #363330;
+  text-decoration: none;
+  color: #363330;
+  background-color: #fff;
   border-radius: 10px;
 
   width: 400px;
@@ -39,4 +40,9 @@ button.newGame {
   margin-left: 20px;
   margin-right: 20px;
   padding: 10px;
+}
+
+.menuLink:hover {
+  color: #fff;
+  background-color: #363330;
 }

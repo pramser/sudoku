@@ -7,11 +7,12 @@ export default class Menu extends Component {
   render() {
     return (
       <div className="Menu">
-        <div className="menuItem">
-          <Link className="newGame" to="/game">
-            New Game
-          </Link>
-        </div>
+        <Link className="menuLink" to="/game">
+          2 x 2 (Square)
+        </Link>
+        <Link className="menuLink" to="/game">
+          3 x 3 (Square)
+        </Link>
       </div>
     );
   }
