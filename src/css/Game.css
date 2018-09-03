@@ -7,31 +7,46 @@
   justify-content: center;
 }
 
-div.infoWindow {
+div.infoPanel {
   font-size: 1.3em;
   color: #363330;
   background-color: #fff;
   border: 1px solid black;
-
-  width: 400px;
-  text-align: center;
-
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  padding: 20px;
-}
-
-button.checkGame {
-  font-size: 1.3em;
-  color: #fff;
-  background-color: #363330;
   border-radius: 10px;
 
   width: 400px;
-
+  text-align: center;
   margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
   padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.new {
+  background-color: #fff;
+}
+
+div.incorrect {
+  color: #fff;
+  background-color: #f67d18;
+}
+
+div.partial {
+  background-color: #f6e018;
+}
+
+div.success {
+  color: #fff;
+  background-color: #03bbf0;
+}
+
+div.info {
+  flex: 5;
+}
+
+button.btnCheck {
+  flex: 1;
+  font-size: 20px;
 }

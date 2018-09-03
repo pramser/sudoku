@@ -6,11 +6,11 @@ body {
 }
 
 .title {
-  color: #b2c0db;
-  font-family: sans-serif;
+  color: #000;
+  font-family: 'Permanent Marker', cursive, 'sans-serif';
   font-size: 50px;
   text-decoration: none;
-  text-shadow: 0px 4px #a1a1b9;
+  text-shadow: 0px 3px #a1a1b9;
 }
 
 .titleContainer {

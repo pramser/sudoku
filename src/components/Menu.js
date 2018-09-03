@@ -7,12 +7,15 @@ export default class Menu extends Component {
   render() {
     return (
       <div className="Menu">
+        {/* <Link className="menuLink" to="/game">
+          Marathon
+        </Link> */}
         <Link className="menuLink" to="/game">
-          2 x 2 (Square)
+          Square 2 x 2
         </Link>
-        <Link className="menuLink" to="/game">
-          3 x 3 (Square)
-        </Link>
+        {/* <Link className="menuLink" to="/game">
+          3 x 3 - Square
+        </Link> */}
       </div>
     );
   }

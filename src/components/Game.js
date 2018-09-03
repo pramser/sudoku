@@ -12,7 +12,7 @@ class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      solutionInfo: 'Unchecked',
+      solutionType: 'new',
       puz: [],
       sol: []
     };
@@ -47,16 +47,18 @@ class Game extends Component {
 
         var temp = puz_col < 0 ? puz_col * -1 : puz_col;
         if (temp !== sol_col) {
-          this.setState({ solutionInfo: 'Incorrect solution' });
+          this.setState({
+            solutionType: 'incorrect'
+          });
           return;
         }
       }
     }
 
     if (zero_count > 0) {
-      this.setState({ solutionInfo: 'Partial solution' });
+      this.setState({ solutionType: 'partial' });
     } else {
-      this.setState({ solutionInfo: 'Complete solution' });
+      this.setState({ solutionType: 'success' });
     }
   }
 
@@ -72,10 +74,15 @@ class Game extends Component {
           size={4}
           onBoardUpdate={this.handleBoardUpdate}
         />
-        <div className="infoWindow">{this.state.solutionInfo}</div>
-        <button className="checkGame" onClick={() => this.checkGame()}>
-          Check Game
-        </button>
+        <div
+          className={'infoPanel ' + this.state.solutionType}
+          onClick={() => this.checkGame()}
+        >
+          <div className="info">
+            {this.state.solutionType.toString().toUpperCase()}
+          </div>
+          <div>&#10004;</div>
+        </div>
       </div>
     );
   }
