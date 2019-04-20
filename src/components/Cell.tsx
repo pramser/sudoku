@@ -4,7 +4,11 @@ import React, { Component } from 'react';
 // CSS
 import '../css/Cell.css';
 
-export default class Cell extends Component {
+export default class Cell extends Component<{
+  value: any;
+  isLocked: any;
+  onClick: any;
+}> {
   render() {
     var value = this.props.value;
     const isLocked = this.props.isLocked;

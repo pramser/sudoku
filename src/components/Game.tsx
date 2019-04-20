@@ -8,8 +8,8 @@ import '../css/Game.css';
 import Board from './Board';
 import { getPuzzle } from '../data/PuzzleLoader';
 
-class Game extends Component {
-  constructor(props) {
+class Game extends Component<any, { solutionType: any; puz: any; sol: any }> {
+  constructor(props: any) {
     super(props);
     this.state = {
       solutionType: 'new',
@@ -20,7 +20,7 @@ class Game extends Component {
 
   componentDidMount() {
     // Mount my puzzle.
-    getPuzzle('med', 2, (puz, sol) => {
+    getPuzzle('med', 2, (puz: any, sol: any) => {
       this.setState({ puz, sol });
     });
   }
@@ -62,7 +62,7 @@ class Game extends Component {
     }
   }
 
-  handleBoardUpdate = puz => {
+  handleBoardUpdate = (puz: any) => {
     this.setState({ puz });
   };
 

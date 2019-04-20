@@ -6,14 +6,18 @@ import Cell from './Cell';
 // CSS
 import '../css/Board.css';
 
-export default class Board extends PureComponent {
+export default class Board extends PureComponent<{
+  data: any;
+  size: any;
+  onBoardUpdate: any;
+}> {
   /* PROPS:
         data - board array passed in
         size - size of board in dimension
         type - square, pentagon, etc.
     */
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.onClickCell = this.onClickCell.bind(this);
   }
@@ -22,7 +26,7 @@ export default class Board extends PureComponent {
     // Add in board loader.
   }
 
-  onClickCell(r, c) {
+  onClickCell(r: any, c: any) {
     const board = this.props.data.slice();
     var val = board[r][c];
     board[r][c] = val === this.props.size ? 0 : val + 1;
@@ -34,9 +38,9 @@ export default class Board extends PureComponent {
   render() {
     return (
       <div className="board">
-        {this.props.data.map((row, r) => (
+        {this.props.data.map((row: any, r: any) => (
           <div className="row" key={r}>
-            {row.map((col, c) => (
+            {row.map((col: any, c: any) => (
               <Cell
                 key={c}
                 value={col}
