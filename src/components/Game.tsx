@@ -7,6 +7,7 @@ import '../css/Game.css';
 // Components
 import Board from './Board';
 import { getPuzzle } from '../data/PuzzleLoader';
+import { Difficulty } from '../types/Puzzle';
 
 class Game extends Component<any, { solutionType: any; puz: any; sol: any }> {
   constructor(props: any) {
@@ -20,7 +21,7 @@ class Game extends Component<any, { solutionType: any; puz: any; sol: any }> {
 
   componentDidMount() {
     // Mount my puzzle.
-    getPuzzle('med', 2, (puz: any, sol: any) => {
+    getPuzzle(Difficulty.Medium, 2, (puz: any, sol: any) => {
       this.setState({ puz, sol });
     });
   }
