@@ -41,9 +41,9 @@ const puzzles = [
 ] as Puzzle[];
 
 export function getPuzzle(difficulty: Difficulty, size: number, callback: any) {
-  var puzzle = puzzles[6];
+  var puzzle = puzzles.find(item => item.size == size);
 
-  if (callback) {
+  if (callback && puzzle) {
     callback(puzzle.puzzle, puzzle.solution);
   }
 }

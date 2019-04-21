@@ -10,7 +10,7 @@ import { getPuzzle } from '../data/PuzzleLoader';
 import { Difficulty } from '../types/Puzzle';
 
 class Game extends Component<
-  { match: { params: { size: string } } },
+  { match: { params: { size: number } } },
   { solutionType: any; puz: any; sol: any }
 > {
   constructor(props: any) {
@@ -23,8 +23,8 @@ class Game extends Component<
   }
 
   componentDidMount() {
-    // Mount my puzzle.
-    getPuzzle(Difficulty.Medium, 2, (puz: any, sol: any) => {
+    const size = this.props.match.params.size;
+    getPuzzle(Difficulty.Medium, size, (puz: any, sol: any) => {
       this.setState({ puz, sol });
     });
   }
