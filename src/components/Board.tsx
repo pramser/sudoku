@@ -8,7 +8,7 @@ import '../css/Board.css';
 
 export default class Board extends PureComponent<{
   data: any;
-  size: any;
+  size: number;
   onBoardUpdate: any;
 }> {
   /* PROPS:
@@ -26,10 +26,13 @@ export default class Board extends PureComponent<{
     // Add in board loader.
   }
 
-  onClickCell(r: any, c: any) {
+  onClickCell(row: number, col: number) {
     const board = this.props.data.slice();
-    var val = board[r][c];
-    board[r][c] = val === this.props.size ? 0 : val + 1;
+    var val = board[row][col] as number;
+
+    // TODO: Fix this - need to resolve as numbers.
+    board[row][col] =
+      val.toString() === this.props.size.toString() ? 0 : val + 1;
 
     // Callback to props.
     this.props.onBoardUpdate(board);
