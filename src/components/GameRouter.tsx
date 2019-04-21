@@ -17,7 +17,7 @@ export default class GameRouter extends Component {
           </div>
           <div>
             <Route exact path="/" component={Menu} />
-            <Route path="/game" component={Game} />
+            <Route path="/game/:size" component={Game} />
           </div>
         </div>
       </Router>

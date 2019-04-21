@@ -9,7 +9,10 @@ import Board from './Board';
 import { getPuzzle } from '../data/PuzzleLoader';
 import { Difficulty } from '../types/Puzzle';
 
-class Game extends Component<any, { solutionType: any; puz: any; sol: any }> {
+class Game extends Component<
+  { match: { params: { size: string } } },
+  { solutionType: any; puz: any; sol: any }
+> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -68,11 +71,13 @@ class Game extends Component<any, { solutionType: any; puz: any; sol: any }> {
   };
 
   render() {
+    const { size } = this.props.match.params;
+
     return (
       <div className="Game">
         <Board
           data={this.state.puz}
-          size={4}
+          size={size}
           onBoardUpdate={this.handleBoardUpdate}
         />
         <div
