@@ -1,7 +1,5 @@
 import React from 'react';
-
-import Cell from './Cell';
-import '../css/Board.css';
+import Cell from './cell';
 
 export default function Board(props: {
   data: any;

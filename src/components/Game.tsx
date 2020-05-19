@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import '../css/Game.css';
-
-import Board from './Board';
-import { getPuzzle } from '../data/PuzzleLoader';
-import { Difficulty } from '../types/Puzzle';
+import Board from './board';
+import { getPuzzle } from '../data/puzzle_loader';
+import { Difficulty } from '../types/puzzle';
 
 export default class Game extends Component<
   { match: { params: { size: number } } },

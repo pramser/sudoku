@@ -1,4 +1,4 @@
-import { Puzzle, Difficulty } from '../types/Puzzle';
+import { Puzzle, Difficulty } from '../types/puzzle';
 
 const puzzles = [
   { difficulty: Difficulty.Easy, size: 1, puzzle: [0], solution: [1] },
