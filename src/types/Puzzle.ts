@@ -8,5 +8,5 @@ export type Puzzle = {
 export enum Difficulty {
   Easy,
   Medium,
-  Hard
+  Hard,
 }

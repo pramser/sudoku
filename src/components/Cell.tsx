@@ -1,29 +1,24 @@
-// Dependencies
-import React, { Component } from 'react';
-
-// CSS
+import React from 'react';
 import '../css/Cell.css';
 
-export default class Cell extends Component<{
-  value: any;
-  isLocked: any;
+export default function Cell(props: {
+  value: number;
+  isLocked: boolean;
   onClick: any;
-}> {
-  render() {
-    var value = this.props.value;
-    const isLocked = this.props.isLocked;
+}) {
+  var value = props.value;
+  const isLocked = props.isLocked;
 
-    if (isLocked) {
-      value = value * -1;
-    }
-
-    return (
-      <div
-        className={isLocked ? 'locked-cell' : 'cell light-cell'}
-        onClick={isLocked ? null : this.props.onClick}
-      >
-        <span>{value === 0 ? '' : value}</span>
-      </div>
-    );
+  if (isLocked) {
+    value = value * -1;
   }
+
+  return (
+    <div
+      className={isLocked ? 'locked-cell' : 'cell light-cell'}
+      onClick={isLocked ? null : props.onClick}
+    >
+      <span>{value === 0 ? '' : value}</span>
+    </div>
+  );
 }

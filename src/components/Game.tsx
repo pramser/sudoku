@@ -1,15 +1,11 @@
-// Dependencies
 import React, { Component } from 'react';
-
-// CSS
 import '../css/Game.css';
 
-// Components
 import Board from './Board';
 import { getPuzzle } from '../data/PuzzleLoader';
 import { Difficulty } from '../types/Puzzle';
 
-class Game extends Component<
+export default class Game extends Component<
   { match: { params: { size: number } } },
   { solutionType: any; puz: any; sol: any }
 > {
@@ -18,7 +14,7 @@ class Game extends Component<
     this.state = {
       solutionType: 'new',
       puz: [],
-      sol: []
+      sol: [],
     };
   }
 
@@ -52,7 +48,7 @@ class Game extends Component<
         var temp = puz_col < 0 ? puz_col * -1 : puz_col;
         if (temp !== sol_col) {
           this.setState({
-            solutionType: 'incorrect'
+            solutionType: 'incorrect',
           });
           return;
         }
@@ -93,5 +89,3 @@ class Game extends Component<
     );
   }
 }
-
-export default Game;
