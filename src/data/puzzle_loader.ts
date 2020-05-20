@@ -122,7 +122,10 @@ const puzzles = [
 
 export function getPuzzle(difficulty: Difficulty, size: number, callback: any) {
   // eslint-disable-next-line
-  var puzzle = puzzles.find((item) => item.size == size);
+  var filteredPuzzles = puzzles.filter((item) => item.size == size);
+
+  const randomIndex = Math.floor(Math.random() * filteredPuzzles.length);
+  const puzzle = filteredPuzzles[randomIndex];
 
   if (callback && puzzle) {
     callback(puzzle.puzzle, puzzle.solution);
