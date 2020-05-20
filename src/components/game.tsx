@@ -62,6 +62,7 @@ export default class Game extends Component<
 
   handleBoardUpdate = (puz: any) => {
     this.setState({ puz });
+    this.checkGame();
   };
 
   render() {
@@ -76,7 +77,7 @@ export default class Game extends Component<
         />
         <div
           className={"infoPanel " + this.state.solutionType}
-          onClick={() => this.checkGame()}
+          onClick={() => null}
         >
           <div className="info">
             {this.state.solutionType.toString().toUpperCase()}
