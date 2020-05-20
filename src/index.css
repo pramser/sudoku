@@ -9,7 +9,7 @@ body {
 
 .title {
   color: #000;
-  font-family: 'Permanent Marker', cursive, 'sans-serif';
+  font-family: "Permanent Marker", cursive, "sans-serif";
   font-size: 50px;
   text-decoration: none;
   text-shadow: 0px 3px #a1a1b9;
@@ -70,6 +70,7 @@ div.board div.cell:hover {
   flex: 1;
   display: flex;
   align-content: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -96,6 +97,7 @@ div.board div.cell:hover {
   flex: 1;
   display: flex;
   align-content: center;
+  align-items: center;
   justify-content: center;
 }
 

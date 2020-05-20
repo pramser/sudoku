@@ -1,7 +1,7 @@
-import React from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import Menu from './menu';
-import Game from './game';
+import React from "react";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import Menu from "./menu";
+import Game from "./game";
 
 export default function GameRouter() {
   return (

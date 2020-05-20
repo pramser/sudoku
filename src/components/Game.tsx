@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import Board from './board';
-import { getPuzzle } from '../data/puzzle_loader';
-import { Difficulty } from '../types/puzzle';
+import React, { Component } from "react";
+import Board from "./board";
+import { getPuzzle } from "../data/puzzle_loader";
+import { Difficulty } from "../types/puzzle";
 
 export default class Game extends Component<
   { match: { params: { size: number } } },
@@ -10,7 +10,7 @@ export default class Game extends Component<
   constructor(props: any) {
     super(props);
     this.state = {
-      solutionType: 'new',
+      solutionType: "new",
       puz: [],
       sol: [],
     };
@@ -46,7 +46,7 @@ export default class Game extends Component<
         var temp = puz_col < 0 ? puz_col * -1 : puz_col;
         if (temp !== sol_col) {
           this.setState({
-            solutionType: 'incorrect',
+            solutionType: "incorrect",
           });
           return;
         }
@@ -54,9 +54,9 @@ export default class Game extends Component<
     }
 
     if (zero_count > 0) {
-      this.setState({ solutionType: 'partial' });
+      this.setState({ solutionType: "partial" });
     } else {
-      this.setState({ solutionType: 'success' });
+      this.setState({ solutionType: "success" });
     }
   }
 
@@ -75,7 +75,7 @@ export default class Game extends Component<
           onBoardUpdate={this.handleBoardUpdate}
         />
         <div
-          className={'infoPanel ' + this.state.solutionType}
+          className={"infoPanel " + this.state.solutionType}
           onClick={() => this.checkGame()}
         >
           <div className="info">

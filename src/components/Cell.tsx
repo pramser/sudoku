@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function Cell(props: {
   value: number;
@@ -14,10 +14,10 @@ export default function Cell(props: {
 
   return (
     <div
-      className={isLocked ? 'locked-cell' : 'cell light-cell'}
+      className={isLocked ? "locked-cell" : "cell light-cell"}
       onClick={isLocked ? null : props.onClick}
     >
-      <span>{value === 0 ? '' : value}</span>
+      <span>{value === 0 ? "" : value}</span>
     </div>
   );
 }
