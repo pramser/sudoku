@@ -62,8 +62,6 @@ div.board div.cell:hover {
   color: #f67d18;
   text-align: center;
 
-  padding-top: 10px;
-
   border: 2px solid #ccc;
   border-radius: 10px;
 
@@ -88,8 +86,6 @@ div.board div.cell:hover {
 
   font-size: 4em;
   text-align: center;
-
-  padding-top: 10px;
 
   border: 2px solid #ccc;
   border-radius: 10px;

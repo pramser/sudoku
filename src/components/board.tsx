@@ -23,6 +23,7 @@ export default function Board(props: {
               key={c}
               value={col}
               isLocked={col < 0}
+              size={props.size}
               onClick={() => onClickCell(r, c)}
             />
           ))}
