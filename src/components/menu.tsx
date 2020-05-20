@@ -16,6 +16,9 @@ export default function Menu() {
       <Link className="menuLink" to="/game/4">
         Square 4 x 4
       </Link>
+      <Link className="menuLink" to="/game/9">
+        Square 9 x 9
+      </Link>
     </div>
   );
 }
