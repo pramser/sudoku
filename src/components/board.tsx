@@ -45,6 +45,19 @@ export default function Board(props: {
   );
 }
 
-const calculateHighlighted: any = (pos, sqrt) => {
-  return pos - sqrt <= 0 || pos - sqrt > sqrt;
+/**
+ * I spent way too much time figuring this out on
+ * my own. This function returns a boolean for the
+ * position that occurs every even squared amount
+ * of times it traverses the position.
+ *
+ * @param pos Current position in the row
+ * @param sqrt The square root of the board size
+ */
+const calculateHighlighted: any = (pos: number, sqrt: number) => {
+  if (pos - sqrt > sqrt) {
+    return !calculateHighlighted(pos - sqrt, sqrt);
+  }
+
+  return pos - sqrt <= 0;
 };
