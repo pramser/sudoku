@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Board from "./board";
 import { getPuzzle } from "../data/puzzle_loader";
 import { Difficulty } from "../types/puzzle";
+import InfoPanel from "./info_panel";
 
 export default class Game extends Component<
   { match: { params: { size: number } } },
@@ -75,15 +76,7 @@ export default class Game extends Component<
           size={size}
           onBoardUpdate={this.handleBoardUpdate}
         />
-        <div
-          className={"infoPanel " + this.state.solutionType}
-          onClick={() => null}
-        >
-          <div className="info">
-            {this.state.solutionType.toString().toUpperCase()}
-          </div>
-          <div>&#10004;</div>
-        </div>
+        <InfoPanel solutionType={this.state.solutionType} />
       </div>
     );
   }
