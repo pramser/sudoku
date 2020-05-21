@@ -1,11 +1,13 @@
 import React from "react";
 
-export default function Cell(props: {
+interface CellProps {
   value: number;
   size: number;
   style: string;
   onClick: any;
-}) {
+}
+
+export default function Cell(props: CellProps) {
   var value = props.value;
   const style = props.style;
   const isLocked = value < 0;

@@ -115,20 +115,20 @@ div.infoPanel {
   justify-content: center;
 }
 
-div.new {
+div.New {
   background-color: #fff;
 }
 
-div.incorrect {
+div.Incorrect {
   color: #fff;
   background-color: #f67d18;
 }
 
-div.partial {
+div.Partial {
   background-color: #f6e018;
 }
 
-div.success {
+div.Success {
   color: #fff;
   background-color: #56df8a;
 }

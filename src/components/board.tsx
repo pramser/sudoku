@@ -1,11 +1,13 @@
 import React from "react";
 import Cell from "./cell";
 
-export default function Board(props: {
-  data: any;
+interface BoardProps {
+  data: number[];
   size: number;
-  onBoardUpdate: any;
-}) {
+  onBoardUpdate: (puzzle: number[]) => void;
+}
+
+export default function Board(props: BoardProps) {
   const onClickCell = (row: number, col: number) => {
     const board = props.data.slice();
     var val = board[row][col] as number;
@@ -20,10 +22,10 @@ export default function Board(props: {
         <div className="row" key={r}>
           {row.map((col: any, c: any) => {
             // Square root of size
-            const sqrt = Math.sqrt(props.size);
+            const sqrt: number = Math.sqrt(props.size);
 
             // All third positions are highlighted
-            var isHighlighted = calculateHighlighted(c + 1, sqrt);
+            var isHighlighted: boolean = calculateHighlighted(c + 1, sqrt);
 
             isHighlighted = calculateHighlighted(r + 1, sqrt)
               ? isHighlighted
@@ -54,7 +56,7 @@ export default function Board(props: {
  * @param pos Current position in the row
  * @param sqrt The square root of the board size
  */
-const calculateHighlighted: any = (pos: number, sqrt: number) => {
+const calculateHighlighted = (pos: number, sqrt: number): boolean => {
   if (pos - sqrt > sqrt) {
     return !calculateHighlighted(pos - sqrt, sqrt);
   }

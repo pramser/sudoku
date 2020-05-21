@@ -10,3 +10,10 @@ export enum Difficulty {
   Medium,
   Hard,
 }
+
+export enum SolutionType {
+  New,
+  Incorrect,
+  Partial,
+  Success,
+}

@@ -1,38 +1,49 @@
 import React, { Component } from "react";
 import Board from "./board";
 import { getPuzzle } from "../data/puzzle_loader";
-import { Difficulty } from "../types/puzzle";
+import { Difficulty, SolutionType } from "../types/puzzle";
 import InfoPanel from "./info_panel";
 
-export default class Game extends Component<
-  { match: { params: { size: number } } },
-  { solutionType: any; puz: any; sol: any }
-> {
+interface GameProps {
+  match: { params: { size: number } };
+}
+
+interface GameState {
+  solutionType: SolutionType;
+  puzzle: any;
+  solution: any;
+}
+
+export default class Game extends Component<GameProps, GameState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      solutionType: "new",
-      puz: [],
-      sol: [],
+      solutionType: SolutionType.New,
+      puzzle: [],
+      solution: [],
     };
   }
 
   componentDidMount() {
-    const size = this.props.match.params.size;
-    getPuzzle(Difficulty.Medium, size, (puz: any, sol: any) => {
-      this.setState({ puz, sol });
-    });
+    const size: number = this.props.match.params.size;
+    getPuzzle(
+      Difficulty.Medium,
+      size,
+      (puzzle: number[], solution: number[]) => {
+        this.setState({ puzzle, solution });
+      }
+    );
   }
 
   checkGame() {
-    var puz = this.state.puz;
-    var sol = this.state.sol;
+    var puzzle: number[][] = this.state.puzzle;
+    var solution: number[][] = this.state.solution;
     var zero_count = 0;
 
-    for (var r = 0; r < puz.length; r++) {
+    for (var r = 0; r < puzzle.length; r++) {
       // row
-      var puz_row = puz[r];
-      var sol_row = sol[r];
+      var puz_row = puzzle[r];
+      var sol_row = solution[r];
 
       for (var c = 0; c < puz_row.length; c++) {
         // col
@@ -47,7 +58,7 @@ export default class Game extends Component<
         var temp = puz_col < 0 ? puz_col * -1 : puz_col;
         if (temp !== sol_col) {
           this.setState({
-            solutionType: "incorrect",
+            solutionType: SolutionType.Incorrect,
           });
           return;
         }
@@ -55,14 +66,14 @@ export default class Game extends Component<
     }
 
     if (zero_count > 0) {
-      this.setState({ solutionType: "partial" });
+      this.setState({ solutionType: SolutionType.Partial });
     } else {
-      this.setState({ solutionType: "success" });
+      this.setState({ solutionType: SolutionType.Success });
     }
   }
 
-  handleBoardUpdate = (puz: any) => {
-    this.setState({ puz });
+  handleBoardUpdate = (puzzle: number[]) => {
+    this.setState({ puzzle });
     this.checkGame();
   };
 
@@ -72,7 +83,7 @@ export default class Game extends Component<
     return (
       <div className="Game">
         <Board
-          data={this.state.puz}
+          data={this.state.puzzle}
           size={size}
           onBoardUpdate={this.handleBoardUpdate}
         />

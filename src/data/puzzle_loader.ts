@@ -160,7 +160,11 @@ const puzzles = [
   },
 ] as Puzzle[];
 
-export function getPuzzle(difficulty: Difficulty, size: number, callback: any) {
+export const getPuzzle = (
+  difficulty: Difficulty,
+  size: number,
+  callback: any
+): void => {
   // eslint-disable-next-line
   var filteredPuzzles = puzzles.filter((item) => item.size == size);
 
@@ -170,4 +174,4 @@ export function getPuzzle(difficulty: Difficulty, size: number, callback: any) {
   if (callback && puzzle) {
     callback(puzzle.puzzle, puzzle.solution);
   }
-}
+};

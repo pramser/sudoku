@@ -1,9 +1,14 @@
 import React from "react";
+import { SolutionType } from "../types/puzzle";
 
-export default function InfoPanel(props: { solutionType: any }) {
+interface InfoPanelProps {
+  solutionType: SolutionType;
+}
+
+export default function InfoPanel(props: InfoPanelProps) {
   return (
-    <div className={"infoPanel " + props.solutionType}>
-      <div className="info">{props.solutionType.toString().toUpperCase()}</div>
+    <div className={"infoPanel " + SolutionType[props.solutionType]}>
+      <div className="info">{SolutionType[props.solutionType]}</div>
       <div>&#10004;</div>
     </div>
   );

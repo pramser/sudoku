@@ -12,7 +12,12 @@ export default function Menu() {
   );
 }
 
-const GameLink = (props: { size: number; children: any }) => {
+interface GameLinkProps {
+  size: number;
+  children: string;
+}
+
+const GameLink = (props: GameLinkProps) => {
   return (
     <Link className="menuLink" to={`/game/${props.size}`}>
       {props.children}
