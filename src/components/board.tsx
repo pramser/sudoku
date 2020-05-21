@@ -18,17 +18,33 @@ export default function Board(props: {
     <div className="board">
       {props.data.map((row: any, r: any) => (
         <div className="row" key={r}>
-          {row.map((col: any, c: any) => (
-            <Cell
-              key={c}
-              value={col}
-              isLocked={col < 0}
-              size={props.size}
-              onClick={() => onClickCell(r, c)}
-            />
-          ))}
+          {row.map((col: any, c: any) => {
+            // Square root of size
+            const sqrt = Math.sqrt(props.size);
+
+            // All third positions are highlighted
+            var isHighlighted = calculateHighlighted(c + 1, sqrt);
+
+            isHighlighted = calculateHighlighted(r + 1, sqrt)
+              ? isHighlighted
+              : !isHighlighted;
+
+            return (
+              <Cell
+                key={c}
+                value={col}
+                style={isHighlighted ? "light" : "dark"}
+                size={props.size}
+                onClick={() => onClickCell(r, c)}
+              />
+            );
+          })}
         </div>
       ))}
     </div>
   );
 }
+
+const calculateHighlighted: any = (pos, sqrt) => {
+  return pos - sqrt <= 0 || pos - sqrt > sqrt;
+};

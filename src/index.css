@@ -40,7 +40,7 @@ body {
   justify-content: center;
 }
 
-div.board div.cell:hover {
+div.board div.default:hover {
   color: #fff;
   background-color: #03bbf0;
 }
@@ -59,11 +59,10 @@ div.board div.cell:hover {
 
 .cell {
   font-size: 4em;
-  color: #f67d18;
   text-align: center;
 
   border: 2px solid #ccc;
-  border-radius: 10px;
+  border-radius: 0.25em;
 
   flex: 1;
   display: flex;
@@ -72,29 +71,20 @@ div.board div.cell:hover {
   justify-content: center;
 }
 
-.dark-cell {
-  background-color: #eee;
+.default {
+  color: #f67d18;
 }
 
-.light-cell {
+.locked {
+  color: #999;
+}
+
+.light {
   background-color: #fff;
 }
 
-.locked-cell {
-  color: #a1a1b9;
-  background-color: #b2c0db;
-
-  font-size: 4em;
-  text-align: center;
-
-  border: 2px solid #ccc;
-  border-radius: 10px;
-
-  flex: 1;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
+.dark {
+  background-color: #d1daeb;
 }
 
 /* game.tsx */

@@ -2,12 +2,13 @@ import React from "react";
 
 export default function Cell(props: {
   value: number;
-  isLocked: boolean;
   size: number;
+  style: string;
   onClick: any;
 }) {
   var value = props.value;
-  const isLocked = props.isLocked;
+  const style = props.style;
+  const isLocked = value < 0;
 
   if (isLocked) {
     value = value * -1;
@@ -17,7 +18,7 @@ export default function Cell(props: {
 
   return (
     <div
-      className={isLocked ? "locked-cell" : "cell light-cell"}
+      className={`cell ${style} ${isLocked ? "locked" : "default"}`}
       style={{ fontSize: `${fontSize}em` }}
       onClick={isLocked ? null : props.onClick}
     >
