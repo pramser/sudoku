@@ -2205,13 +2205,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^16.9.35":
-  version: 16.9.35
-  resolution: "@types/react@npm:16.9.35"
+"@types/react@npm:^16.9.36":
+  version: 16.9.36
+  resolution: "@types/react@npm:16.9.36"
   dependencies:
     "@types/prop-types": "*"
     csstype: ^2.2.0
-  checksum: 3/17c41e59d76634d3c9e21d30bda9afe311e99d2dd37274c8763a9ae3e20d775ee0220d456f11cc0de2ec337306ae7d9f329177b40c2ef299b35881620e7703c2
+  checksum: 3/63731d81fcd0407ea17f265aa042bbf01f208798ca773e1a158ccb721798cffb4b398cc1c098fe8a71ff053601a51171bb607c3ff2ba14e1ff063aefe94f08cd
   languageName: node
   linkType: hard
 
@@ -13609,14 +13609,14 @@ resolve@1.1.7:
   version: 0.0.0-use.local
   resolution: "sudoku@workspace:."
   dependencies:
-    "@types/react": ^16.9.35
+    "@types/react": ^16.9.36
     "@types/react-dom": ^16.9.8
     "@types/react-router-dom": ^5.1.5
     react: ^16.13.1
     react-dom: ^16.13.1
     react-router-dom: ^5.2.0
     react-scripts: ^3.4.1
-    typescript: ^3.9.2
+    typescript: ^3.9.5
   languageName: unknown
   linkType: soft
 
@@ -14099,23 +14099,23 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-typescript@^3.9.2:
-  version: 3.9.2
-  resolution: "typescript@npm:3.9.2"
+typescript@^3.9.5:
+  version: 3.9.5
+  resolution: "typescript@npm:3.9.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 3/bf7cbf2f8c695aa942be60da470aaaf902c2e9b3693ed5141fa6de5632f42f471b7e83bd9d4dcff5e0fa37eff746d61cfe1e6949019ad70f0f98d1f60ccfd3ae
+  checksum: 3/15618435493667083eb43dc7b36c4d3dd47fd9e9c8a14f0ac4019bbf6124b6cc518b6ed506400913db1bf50831207ee8201b5d827680076930b562923f4f18a0
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^3.9.2#builtin<compat/typescript>":
-  version: 3.9.2
-  resolution: "typescript@patch:typescript@npm%3A3.9.2#builtin<compat/typescript>::version=3.9.2&hash=8cac75"
+"typescript@patch:typescript@^3.9.5#builtin<compat/typescript>":
+  version: 3.9.5
+  resolution: "typescript@patch:typescript@npm%3A3.9.5#builtin<compat/typescript>::version=3.9.5&hash=8cac75"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 3/51daca430f15c0df7aa820da2ef0a042b081327a1c2426016abbbcb35395f38d9559036a9b9e71320075197444e9b1093726a8086129a4ec367f188ba398212c
+  checksum: 3/347b57e017c6f6c956eb7fc3c392e764bb924b1758103207cfb9c465210d4134212a164a064c259d524f055b86b023ebecc3e3ab5b5d666c1c0d96e1397149f6
   languageName: node
   linkType: hard
 
